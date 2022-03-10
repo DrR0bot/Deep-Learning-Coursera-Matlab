@@ -46,7 +46,7 @@ Y = Y.Y; % BECAUSE IS SAVED AS A STRUCTURE
 
 num_iterations = 10000;
 k = 1;
-learning_rate = 0.5;
+learning_rate = 0.05;
 % Loop (gradient descent)
 for i = 1:num_iterations
     % Forward Propagation
@@ -61,11 +61,13 @@ for i = 1:num_iterations
     % Update Parameters
     [W1,b1,W2,b2] = update_parameters(W1,b1,W2,b2,dW1,db1,dW2,db2,learning_rate);
 
-    if mod(i,1000) == 0
+    if mod(i,100) == 0
         iteration(k) = k;
         costing(k) = cost;
         k = k + 1;
     end
 end
 figure(1)
-plot(iteration, costing)
+plot(iteration*100, costing)
+xlabel('Iterations')
+ylabel('Cost Function')
