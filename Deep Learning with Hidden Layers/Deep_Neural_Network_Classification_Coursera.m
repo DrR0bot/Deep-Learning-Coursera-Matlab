@@ -21,7 +21,7 @@ X = load("t_X.mat").t_X ;
 Y = load("t_Y.mat").t_Y ;
 %% Neural Network Model
 % Define the neural network structure ( # of input units,  # of hidden units, etc).
-nh = 50;
+nh = 4;
 [n_x, n_h, n_y,m] = layer_sizes(X,Y,nh);
 %% Initialize the model's parameters
 [W1,b1,W2,b2] = rand_initialize(n_x,n_h,n_y);
